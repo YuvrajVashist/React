@@ -57,13 +57,13 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <div className="flex items-center gap-3 md:hidden">
+                <div className="flex items-center gap-3 md:hidden cursor-pointer">
                     <img onClick={()=>{setIsMenuOpen(!isMenuOpen)}} src={menuicon} alt="" className={`${isScrolled && "invert"} h-4`} />
                 </div>
 
                 {/* Mobile Menu */}
                 <div className={`fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
-                    <button className="absolute top-4 right-4" >
+                    <button className="absolute top-4 right-4 cursor-pointer" >
                         <img onClick={() => setIsMenuOpen(false)} src={closeIcon} alt="close-menu" className="h-6.5" />
                     </button>
 
