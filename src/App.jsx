@@ -1,15 +1,22 @@
-import React, { use } from 'react'
 import Navbar from './components/Navbar'
-import { useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import Home from './pages/Home'
 
 function App() {
-  //we are restircting the navbar not to display on the page when the route - owner
-  const isOwnerPath = useLocation().pathname.includes("owner")
-  return (
-    <div>
-      {!isOwnerPath && <Navbar/>}
-    </div>
-  )
+    // Hide Navbar on owner routes
+    const isOwnerPath = useLocation().pathname.includes("owner")
+
+    return (
+        <div>
+            {!isOwnerPath && <Navbar />}
+
+            <div className="min-h-screen">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                </Routes>
+            </div>
+        </div>
+    )
 }
 
 export default App
