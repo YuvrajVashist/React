@@ -6,9 +6,9 @@ function FeatureDestination() {
   return (
     <div>
         <div>
-            {roomsDummyData.slice(0,4).map((room,index)=>{
-                <HotelCard key={room._id} room={room} index={index}/>
-            })}
+            {roomsDummyData.slice(0,4).map((room,index)=>
+                (<HotelCard key={room._id} room={room} index={index}/>)
+            )}
         </div>
     </div>
   )
