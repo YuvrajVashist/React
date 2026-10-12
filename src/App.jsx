@@ -1,7 +1,8 @@
 import Navbar from './components/Navbar'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
-import Experience from './pages/Experience'
+import Layout from './components/Layout'
+
 
 function App() {
     // Hide Navbar on owner routes
@@ -13,9 +14,10 @@ function App() {
 
             <div className="min-h-screen">
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/experience" element={<Experience />} />
-                    <Route path='/rooms' />
+                    <Route element={<Layout/>}>
+                        <Route path="/" element={<Home />} />
+                        <Route path='/rooms' />
+                    </Route>
                 </Routes>
             </div>
         </div>
